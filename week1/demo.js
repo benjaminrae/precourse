@@ -3,30 +3,30 @@
  * Tambien es importante que ven que no usamos if else y else if
  */
 const getUserGuess = () => {
-  let receivedGuess = +prompt('Enter a number between 1 and 100');
+  let receivedGuess = +prompt("Enter a number between 1 and 100");
 
   /**
    * Seguramente esta condicion causa preguntas
    * Si quieren saber la diferencia entre isNaN y Number.isNaN es importante ir a MDN
    * Que lo lean ellos y comprobar que lo entienden
    */
-  if (typeof receivedGuess !== 'number' || Number.isNaN(receivedGuess)) {
-    alert('Please enter a number');
+  if (typeof receivedGuess !== "number" || Number.isNaN(receivedGuess)) {
+    alert("Please enter a number");
     return getUserGuess();
   }
 
   if (receivedGuess < 0) {
-    alert('Please enter a number greater than 1');
+    alert("Please enter a number greater than 1");
     return getUserGuess();
   }
 
   if (receivedGuess > 100) {
-    alert('Please enter a number less than 100');
+    alert("Please enter a number less than 100");
     return getUserGuess();
   }
 
   if (!Number.isInteger(receivedGuess)) {
-    alert('Please enter a whole number');
+    alert("Please enter a whole number");
     return getUserGuess();
   }
 
@@ -39,22 +39,22 @@ const checkUserNumberIsCorrect = (
   guessedNumbers
 ) => {
   if (guessedNumbers.includes(userNumber)) {
-    alert('You already guessed that number');
+    alert("You already guessed that number");
     return false;
   }
 
   if (userNumber !== numberToGuess) {
-    alert('Wrong number');
+    alert("Wrong number");
     guessedNumbers.push(userNumber);
     return false;
   }
 
-  alert('You guessed the number!');
+  alert("You guessed the number!");
   return true;
 };
 
 const checkContinue = () => {
-  const continuePlaying = confirm('Do you want to continue playing?');
+  const continuePlaying = confirm("Do you want to continue playing?");
 
   return continuePlaying;
 };
@@ -71,7 +71,7 @@ const playNumberGuessingGame = () => {
    * a estas alturas solo se puede hacer eso con mensajes claros y amigables
    * aqui ya se podria usar el nombre del usuario, pero no lo hacemos para ahorrar tiempo
    */
-  alert('Welcome to the number guessing game!');
+  alert("Welcome to the number guessing game!");
   const numberToGuess = 5;
   const guessedNumbers = [];
   let turns = 0;
@@ -90,9 +90,9 @@ const playNumberGuessingGame = () => {
     if (isCorrect) {
       alert(`It took you ${turns} turns to guess the number`);
     }
-  } while (checkContinue() && !isCorrect);
+  } while (checkContinue() === true ? playNumberGuessingGame() :  alert("Goodbye! See you next time!"));
 
-  alert('Goodbye! See you next time!');
+  ;
 };
 
 playNumberGuessingGame();
