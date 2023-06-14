@@ -1,34 +1,3 @@
-// class Wordle {
-//   word;
-//   maxAttempts = 6;
-//   currentAttempts = 0;
-
-//   constructor(word) {
-//     this.word = this.createWord(word);
-//   }
-
-//   createWord(word) {
-//     this.word = word.split('').forEach((letter) => ({
-//       letter,
-//       isGuessed: false,
-//     }));
-//   }
-
-//   getWord() {
-//     return this.word;
-//   }
-
-//   guessLetter(letter) {
-//     this.word = this.word.map((letter) => {
-//       if (letter === letter) {
-//         return { ...letter, isGuessed: true };
-//       }
-
-//       return letter;
-//     });
-//   }
-// }
-
 class Attempt {
   letters;
 
@@ -55,8 +24,6 @@ class Attempt {
       if (wordOfTheDay.includes(letter.character)) {
         letter.isIncluded = true;
         letter.isCorrect = false;
-
-        return;
       }
     });
   }
@@ -79,6 +46,10 @@ class Attempt {
     });
 
     console.table(printableLetters);
+  }
+
+  checkIfCorrect() {
+    return this.letters.every((letter) => letter.isCorrect);
   }
 }
 
@@ -108,12 +79,53 @@ const createAttemptsTable = (maximumAttempts, maximumCharacters) => {
   return attempts;
 };
 
+const printAttempts = (attempts) => {
+  attempts.forEach((attempt) => {
+    attempt.printAttempt();
+  });
+};
+
+const getUserGuess = () => {
+  const guessedWord = prompt('Guess a word!');
+
+  if (!guessedWord) {
+    alert('You must guess a word!');
+    return getUserGuess();
+  }
+
+  if (guessedWord.length !== 5) {
+    alert('You must guess a word with 5 letters!');
+    return getUserGuess();
+  }
+
+  if (!/^[a-zA-Z]+$/.test(guessedWord)) {
+    alert('Invalid word! Please enter only alphabetic characters.');
+    return getUserGuess();
+  }
+
+  return guessedWord.toLocaleLowerCase();
+};
+
+const checkIfPlaying = (hasWon, currentAttempts, maximumAttempts) => {
+  if (hasWon) {
+    return false;
+  }
+
+  if (currentAttempts === maximumAttempts) {
+    return false;
+  }
+
+  return confirm('Do you want to continue playing?');
+};
+
 const playWordle = () => {
   const fiveLetterWords = ['hello', 'world'];
   const maximumCharacters = 5;
   const usedWordsOfTheDay = [];
   const maximumAttempts = 6;
-  const currentAttempts = 0;
+  let attemptCount = 0;
+  let hasWon = false;
+  let isPlaying = true;
   const attempts = new Array(maximumAttempts)
     .fill(null)
     .map(() => new Attempt(maximumCharacters));
@@ -124,17 +136,28 @@ const playWordle = () => {
 
   const wordOfTheDay = getWordOfTheDay(fiveLetterWords, usedWordsOfTheDay);
 
-  attempts.forEach((attempt) => {
-    attempt.printAttempt();
-  });
+  printAttempts(attempts);
 
-  const guessedWord = prompt('Guess a word!');
+  do {
+    const guessedWord = getUserGuess();
 
-  const currentAttempt = attempts[currentAttempts];
+    const currentAttempt = attempts[attemptCount];
 
-  currentAttempt.makeAttempt(guessedWord, wordOfTheDay);
+    currentAttempt.makeAttempt(guessedWord, wordOfTheDay);
 
-  currentAttempt.printAttempt();
+    hasWon = currentAttempt.checkIfCorrect();
 
-  alert('Thanks for playing Worldle, come back soon!');
+    console.clear();
+    printAttempts(attempts);
+
+    attemptCount++;
+
+    isPlaying = checkIfPlaying(hasWon, attemptCount, maximumAttempts);
+  } while (isPlaying);
+
+  if (hasWon) {
+    alert(`You won in ${attemptCount} attempts!`);
+  }
+
+  alert('Thanks for playing Worldle, come back tomorrow!');
 };
