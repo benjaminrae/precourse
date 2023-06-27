@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Wordle</title>
+</head>
+
+<body>
+  <header class="main-header">
+    <button class="menu-button">
+      <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24"
+        fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff">
+        <path d="M3 5h18M3 12h18M3 19h18" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round">
+        </path>
+      </svg>
+    </button>
+    <h1 class="main-title">Wordle</h1>
+    <button class="help-button">
+      <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24"
+        fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#fff"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M9 9c0-3.5 5.5-3.5 5.5 0 0 2.5-2.5 2-2.5 5M12 18.01l.01-.011" stroke="#fff" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <button class="leaderboard-button">
+      <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24"
+        fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff">
+        <path
+          d="M15 19H9V8.6a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6V19zM15 5H9M20.4 19H15v-3.9a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v3.3a.6.6 0 01-.6.6zM9 19v-5.9a.6.6 0 00-.6-.6H3.6a.6.6 0 00-.6.6v5.3a.6.6 0 00.6.6H9z"
+          stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <button class="settings-button">
+      <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24"
+        fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff">
+        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round"></path>
+        <path
+          d="M19.622 10.395l-1.097-2.65L20 6l-2-2-1.735 1.483-2.707-1.113L12.935 2h-1.954l-.632 2.401-2.645 1.115L6 4 4 6l1.453 1.789-1.08 2.657L2 11v2l2.401.655L5.516 16.3 4 18l2 2 1.791-1.46 2.606 1.072L11 22h2l.604-2.387 2.651-1.098C16.697 18.831 18 20 18 20l2-2-1.484-1.75 1.098-2.652 2.386-.62V11l-2.378-.605z"
+          stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <a href="/save" class="save-link">Save 50% on Games</a>
+  </header>
+  <main>
+    <section class="game-board">
+      <ul class="attempt attempt1">
+        <li class="letter letter1"></li>
+        <li class="letter letter2"></li>
+        <li class="letter letter3"></li>
+        <li class="letter letter4"></li>
+        <li class="letter letter5"></li>
+      </ul>
+      <ul class="attempt attempt2">
+        <li class="letter letter1"></li>
+        <li class="letter letter2"></li>
+        <li class="letter letter3"></li>
+        <li class="letter letter4"></li>
+        <li class="letter letter5"></li>
+      </ul>
+      <ul class="attempt attempt3">
+        <li class="letter letter1"></li>
+        <li class="letter letter2"></li>
+        <li class="letter letter3"></li>
+        <li class="letter letter4"></li>
+        <li class="letter letter5"></li>
+      </ul>
+      <ul class="attempt attempt4">
+        <li class="letter letter1"></li>
+        <li class="letter letter2"></li>
+        <li class="letter letter3"></li>
+        <li class="letter letter4"></li>
+        <li class="letter letter5"></li>
+      </ul>
+      <ul class="attempt attempt5">
+        <li class="letter letter1"></li>
+        <li class="letter letter2"></li>
+        <li class="letter letter3"></li>
+        <li class="letter letter4"></li>
+        <li class="letter letter5"></li>
+      </ul>
+      <ul class="attempt attempt6">
+        <li class="letter letter1"></li>
+        <li class="letter letter2"></li>
+        <li class="letter letter3"></li>
+        <li class="letter letter4"></li>
+        <li class="letter letter5"></li>
+      </ul>
+    </section>
+    <section class="keyboard">
+      <ul class="keyboard-row keyboard-row1">
+        <li>
+          <button class="key">q</button>
+        </li>
+        <li>
+          <button class="key">w</button>
+        </li>
+        <li>
+          <button class="key">e</button>
+        </li>
+        <li>
+          <button class="key">r</button>
+        </li>
+        <li>
+          <button class="key">t</button>
+        </li>
+        <li>
+          <button class="key">y</button>
+        </li>
+        <li>
+          <button class="key">u</button>
+        </li>
+        <li>
+          <button class="key">i</button>
+        </li>
+        <li>
+          <button class="key">o</button>
+        </li>
+        <li>
+          <button class="key">p</button>
+        </li>
+      </ul>
+      <ul class="keyboard-row keyboard-row2">
+        <li>
+          <button class="key">a</button>
+        </li>
+        <li>
+          <button class="key">s</button>
+        </li>
+        <li>
+          <button class="key">d</button>
+        </li>
+        <li>
+          <button class="key">f</button>
+        </li>
+        <li>
+          <button class="key">g</button>
+        </li>
+        <li>
+          <button class="key">h</button>
+        </li>
+        <li>
+          <button class="key">j</button>
+        </li>
+        <li>
+          <button class="key">k</button>
+        </li>
+        <li>
+          <button class="key">l</button>
+        </li>
+      </ul>
+      <ul class="keyboard-row keyboard-row3">
+        <li>
+          <button class="key">enter</button>
+        </li>
+        <li>
+          <button class="key">z</button>
+        </li>
+        <li>
+          <button class="key">x</button>
+        </li>
+        <li>
+          <button class="key">c</button>
+        </li>
+        <li>
+          <button class="key">v</button>
+        </li>
+        <li>
+          <button class="key">b</button>
+        </li>
+        <li>
+          <button class="key">n</button>
+        </li>
+        <li>
+          <button class="key">m</button>
+        </li>
+        <li>
+          <button class="key">del</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
