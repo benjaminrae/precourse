@@ -1,0 +1,53 @@
+55,60c55,60
+<       <ul class="row">
+<         <li class="letter incorrect">h</li>
+<         <li class="letter incorrect">e</li>
+<         <li class="letter included">l</li>
+<         <li class="letter correct">l</li>
+<         <li class="letter included">o</li>
+---
+>       <ul class="attempt">
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+62,67c62,67
+<       <ul class="row">
+<         <li class="letter correct">w</li>
+<         <li class="letter correct">o</li>
+<         <li class="letter correct">r</li>
+<         <li class="letter correct">l</li>
+<         <li class="letter correct">d</li>
+---
+>       <ul class="attempt">
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+69,72c69,72
+<       <ul class="row">
+<         <li class="letter filled">a</li>
+<         <li class="letter filled">b</li>
+<         <li class="letter filled">c</li>
+---
+>       <ul class="attempt">
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+>         <li class="letter"></li>
+76c76
+<       <ul class="row">
+---
+>       <ul class="attempt">
+83c83
+<       <ul class="row">
+---
+>       <ul class="attempt">
+90c90
+<       <ul class="row">
+---
+>       <ul class="attempt">
+192a193,194
+> <script src="index.js"></script>
+> 

@@ -1,0 +1,16 @@
+64c64
+< .row {
+---
+> .attempt {
+71c71
+<   height: 62px;
+---
+>   height: 52px;
+74c74
+<   font-size: 30px;
+---
+>   font-size: 28px;
+77c77
+<   line-height: 62px;
+---
+>   line-height: 52px;
